@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <link type="text/css" href="./css/design.css" rel="stylesheet">
+    <title>Election Results</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row select_elect">
+        <div class="col-lg-12">
+          <h1 class="head_center">Election Results</h1>
+          <hr/>
+          <br/>
+          <div id="loader">
+            <p class="load_center">Loading...</p>
+          </div>
+          <div id="content" style="display: none;">
+            
+            <h3>President</h3>
+            <table class="table">
+              
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Votes</th>
+                  <th scope="col">Roll Number</th>
+                  <th scope="col">Position</th>
+                  
+                </tr>
+              </thead>
+              <tbody id="candidatesResultsPresident">
+              </tbody>
+            </table>
+            <form>
+              <div class="form-group">
+                <label for="candidatesSelectPresident">Select Candidate</label>
+                <select class="form-control" id="candidatesSelectPresident">
+                </select>
+              </div>
+              <hr />
+            </form>
+            <h3>Academics</h3>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Votes</th>
+                  <th scope="col">Roll Number</th>
+                  <th scope="col">Position</th>
+                  
+                </tr>
+              </thead>
+              <tbody id="candidatesResultsAcademics">
+              </tbody>
+            </table>
+            <form>
+              <div class="form-group">
+                <label for="candidatesSelectAcademics">Select Candidate</label>
+                <select class="form-control" id="candidatesSelectAcademics">
+                </select>
+              </div>
+              <hr />
+            </form>
+            <h3>Culturals</h3>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Votes</th>
+                  <th scope="col">Roll Number</th>
+                  <th scope="col">Position</th>
+                  
+                </tr>
+              </thead>
+              <tbody id="candidatesResultsCulturals">
+              </tbody>
+            </table>
+            <form>
+              <div class="form-group">
+                <label for="candidatesSelectCulturals">Select Candidate</label>
+                <select class="form-control" id="candidatesSelectCulturals">
+                </select>
+              </div>
+              <hr />
+            </form>
+            <h3>Hostel Affairs</h3>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Votes</th>
+                  <th scope="col">Roll Number</th>
+                  <th scope="col">Position</th>
+                  
+                </tr>
+              </thead>
+              <tbody id="candidatesResultsHostel">
+              </tbody>
+            </table>
+            <form onSubmit="App.castVote();">
+              <div class="form-group">
+                <label for="candidatesSelectHostel">Select Candidate</label>
+                <select class="form-control" id="candidatesSelectHostel">
+                </select>
+              </div>
+              <button type="submit" class="btn btn-primary">Vote</button>
+              <hr />
+            </form>
+            <hr/>
+            <p id="accountAddress" class="text_center"></p>
+          </div>
+        </div>
+      </div>
+    
+    <hr />
+
+    <div class="row join_elect">
+    <h1>Do you want to nominate yourself for election?</h1>
+    <input type="button" class="btn_yes" id="nominate_yes" onclick="tovisible()" value="YES" />
+    <form class="sel_post" onSubmit="App.addcandi();">
+        <div id="select_post" style="display: none;" >
+          <br></br>
+          <label class="nom_label">Enter Name:</label>  
+          <input type="text" class="nom_input" id="cand_name" />
+          <br></br>
+          <label class="nom_label"> Enter roll number:</label>
+          <input type="text" class="nom_input" id="cand_roll" />
+          <br></br>
+          <label class="nom_label">Select post</label>
+          <select id="candpost" class="nom_input">
+            <option>General Secretary, President</option>
+            <option>General Secretary, Hostel Affairs</option>
+            <option>General Secretary, Culturals</option>
+            <option>General Secretary, Academics</option>
+            </select>
+          <button type="submit" class="nom_submit">Submit</button>
+         </div>
+    </form>
+    <br></br>
+    <input type="submit" class="btn_no" id="nominate_no" onclick="tohide()" value="NO">
+    </div>
+   </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/web3.min.js"></script>
+    <script src="js/truffle-contract.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+      function tovisible(){
+      document.getElementById("select_post").style.display = "inline";
+      }
+      function tohide(){
+      document.getElementById("select_post").style.display = "none";
+      }
+  </script>
+  </body>
+</html>
